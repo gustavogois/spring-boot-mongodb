@@ -15,8 +15,14 @@ You can learn more about my courses [here](http://courses.springframework.guru/c
 
 - ```docker run -p 27017:27017 -v /Users/gustavogois/projetos/spring-boot-mongodb/dockerdata/mongo:/data/db -d mongo```
 
+- ```docker kill 749d087e19d9```
+
 - ```docker logs -f 2d829b113cbd```
 - ```docker logs 91094e7def43```
+
+## Rabbit MQ
+
+- ```docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 rabbitmq:3-management```
 
 ## Other useful commands
 
