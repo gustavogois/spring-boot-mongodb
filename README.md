@@ -28,6 +28,33 @@ You can learn more about my courses [here](http://courses.springframework.guru/c
 
 - ```docker run --name gois-mysql2 -v /Users/gustavogois/projetos/spring-boot-mongodb/dockerdata/mysql:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -p 3306:3306 -d mysql```
 
+## Some concepts
+
+- "With a lot of Docker containers, you're going to be setting environment variables, mapping ports, and mapping storage."
+
+## House Keeping
+
+- There are 3 key areas of house keeping: containers, images and volumes
+
+### Containers
+
+- Kill all running Docker containers: ```docker kill $(docker ps -q)```
+- Delete all Stopped Docker Containers: ```docker rm $(docker ps -a -q)```
+
+### Images
+
+- Remove a Docker Image: ```docker rmi <image name>```
+- Delete Untagged (dangling) images: ```docker rmi $(docker images -q -f dangling=true)```
+- Delete All Images: ```docker rmi $(docker images -q)```
+
+### Volumes
+
+- Once a volume is no longer associated with a container, it's considered 'dangling'
+    - Remove all dangling volumes: ```docker volume rm $(docker volume ls -f dangling=true -q)```
+    - Note: Does not remove files from host system in shared volumes
+
+https://springframework.guru/docker-cheat-sheet-for-spring-devlopers/ 
+
 ## Other useful commands
 
 - ```lsof -nP -i4TCP:8080 | grep LISTEN```
@@ -40,6 +67,3 @@ You can learn more about my courses [here](http://courses.springframework.guru/c
 
 - ```ls -tlr```
 
-## Some concepts
-
-- "With a lot of Docker containers, you're going to be setting environment variables, mapping ports, and mapping storage."
