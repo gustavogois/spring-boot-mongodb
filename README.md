@@ -24,11 +24,22 @@ You can learn more about my courses [here](http://courses.springframework.guru/c
 
 - ```docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 rabbitmq:3-management```
 
+## MYSQL
+
+- ```docker run --name gois-mysql2 -v /Users/gustavogois/projetos/spring-boot-mongodb/dockerdata/mysql:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -p 3306:3306 -d mysql```
+
 ## Other useful commands
 
 - ```lsof -nP -i4TCP:8080 | grep LISTEN```
+- ```sudo lsof -iTCP -sTCP:LISTEN -n -P```
 
 - ```kill -9 <<pid>>```
 
 - ```history | grep mongo```
 - ```!577```
+
+- ```ls -tlr```
+
+## Some concepts
+
+- "With a lot of Docker containers, you're going to be setting environment variables, mapping ports, and mapping storage."
