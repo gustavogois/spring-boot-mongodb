@@ -22,6 +22,28 @@ Run the application:
 - We're no overriding any properties at all (application.property is empty). We're purely using the spring boot defaults. 
 - We're not using the embedded MongoDB.
 
+## Images X Container
+
+- In an analogy, docker images are like java's class, while the container represents the instances of the images.
+- An Image defines a Docker container.
+- Images are immutable. Once built, the files making up an image do not change.
+- Images are built in layers. Each layer is an immutable file (but is a collection of files and directories)
+- Layers receive an ID. Thus, if the layer contents change, the ID changes too.
+
+### Notes
+
+- Command to see the mongo's image:
+
+```
+docker image inspect mongo
+```
+
+- Command to see complet hash ID
+
+```
+docker images -q --no-trunc
+```
+
 ## Docker Commands
 
 - ```docker run -p 27017:27017 -d mongo```
