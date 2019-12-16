@@ -5,9 +5,22 @@ For a code review of this repo, see my related [blog post](https://springframewo
 
 You can learn more about my courses [here](http://courses.springframework.guru/courses/) on my site.
 
-## Run the application
+## See the logs and running the app
+
+The Mongo's container is running in the background. To see the logs of this container:
+
+```
+docker logs -f <container_id>
+```
+
+Run the application:
 
 ```mvn spring-boot:run```
+
+### Notes
+
+- We're no overriding any properties at all (application.property is empty). We're purely using the spring boot defaults. 
+- We're not using the embedded MongoDB.
 
 ## Docker Commands
 
