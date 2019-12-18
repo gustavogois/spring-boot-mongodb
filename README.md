@@ -44,11 +44,31 @@ docker image inspect mongo
 docker images -q --no-trunc
 ```
 
+## Persistent
+
+If we stop the container, all registered data are lost. So, what we need is tell it to map to 
+a specific directory on the host machine. So, when it starts back up, it will bring the 
+database up, just like how it's running on localhost.
+
+1. Create the directory dockerdata/mongo/
+
+2. Remember the command to run mongo image:
+
+```
+docker run -p 27017:27017 -d mongo
+```
+
+Now, execute this command:
+
+```
+docker run -p 27017:27017 -v /Users/gustavogois/projetos/spring-boot-mongodb/dockerdata/mongo:/data/db -d mongo
+```
+
+All these information you can find on docker hub mongo's page.
+
 ## Docker Commands
 
-- ```docker run -p 27017:27017 -d mongo```
 
-- ```docker run -p 27017:27017 -v /Users/gustavogois/projetos/spring-boot-mongodb/dockerdata/mongo:/data/db -d mongo```
 
 - ```docker kill 749d087e19d9```
 
